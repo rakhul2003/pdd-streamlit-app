@@ -148,7 +148,7 @@ def main():
     st.markdown(
         """
         <div style='text-align: center; color: gray;'>
-            <p>T-shirt Defect Detection System | Powered by Computer Vision & Delta-E Analysis</p>
+            <p>Print Defect Detection System | Powered by Computer Vision & Delta-E Analysis</p>
         </div>
         """,
         unsafe_allow_html=True
