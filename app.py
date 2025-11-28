@@ -42,7 +42,7 @@ def main():
             key="golden"
         )
         if golden_file:
-            st.image(golden_file, caption="Golden Sample", use_container_width=True)
+            st.image(golden_file, caption="Golden Sample", width="stretch")
     
     with col2:
         st.subheader("📸 Test Sample")
@@ -52,7 +52,7 @@ def main():
             key="test"
         )
         if test_file:
-            st.image(test_file, caption="Test Sample", use_container_width=True)
+            st.image(test_file, caption="Test Sample", width="stretch")
     
     st.markdown("---")
     
@@ -106,15 +106,15 @@ def main():
                     
                     with img_col1:
                         st.markdown("**Delta-E Normalized**")
-                        st.image(result["delta_e_normalized"], use_container_width=True, clamp=True)
+                        st.image(result["delta_e_normalized"], width="stretch", clamp=True)
                     
                     with img_col2:
                         st.markdown("**Final Heatmap**")
-                        st.image(numpy_to_pil(result["heatmap"]), use_container_width=True)
+                        st.image(numpy_to_pil(result["heatmap"]), width="stretch")
                     
                     with img_col3:
                         st.markdown("**Defect Overlay**")
-                        st.image(numpy_to_pil(result["overlay"]), use_container_width=True)
+                        st.image(numpy_to_pil(result["overlay"]), width="stretch")
                     
                     st.markdown("---")
                     
@@ -124,20 +124,20 @@ def main():
                         
                         with add_col1:
                             st.markdown("**Aligned Test Image**")
-                            st.image(numpy_to_pil(result["aligned"]), use_container_width=True)
+                            st.image(numpy_to_pil(result["aligned"]), width="stretch")
                             
                             st.markdown("**Delta-E Map**")
-                            st.image(result["delta_e_map"], use_container_width=True, clamp=True)
+                            st.image(result["delta_e_map"], width="stretch", clamp=True)
                             
                             st.markdown("**Defects (Unfiltered)**")
-                            st.image(result["defect_mask_unfiltered"], use_container_width=True, clamp=True)
+                            st.image(result["defect_mask_unfiltered"], width="stretch", clamp=True)
                         
                         with add_col2:
                             st.markdown("**Defects (Filtered)**")
-                            st.image(result["defect_mask_filtered"], use_container_width=True, clamp=True)
+                            st.image(result["defect_mask_filtered"], width="stretch", clamp=True)
                             
                             st.markdown("**Heatmap Visualization**")
-                            st.image(numpy_to_pil(result["heatmap"]), use_container_width=True)
+                            st.image(numpy_to_pil(result["heatmap"]), width="stretch")
                 
                 except Exception as e:
                     st.error(f"❌ Error during detection: {str(e)}")

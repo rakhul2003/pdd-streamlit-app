@@ -33,7 +33,8 @@ def process_tshirt(golden, test, cfg):
     # Compute Delta-E
     delta_e = compute_delta_e(golden, aligned)
     delta_e_uint8 = delta_e.astype("uint8")
-    delta_e_normalized = (255 * (delta_e - delta_e.min()) / (delta_e.ptp() if delta_e.ptp() else 1)).astype("uint8")
+    delta_e_ptp = np.ptp(delta_e)
+    delta_e_normalized = (255 * (delta_e - delta_e.min()) / (delta_e_ptp if delta_e_ptp else 1)).astype("uint8")
 
     # Defect analysis
     thresholds = {
