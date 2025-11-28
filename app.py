@@ -142,17 +142,6 @@ def main():
                 except Exception as e:
                     st.error(f"❌ Error during detection: {str(e)}")
                     st.exception(e)
-    
-    # Footer
-    st.markdown("---")
-    st.markdown(
-        """
-        <div style='text-align: center; color: gray;'>
-            <p>Print Defect Detection System | Powered by Computer Vision & Delta-E Analysis</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
 
 
 if __name__ == "__main__":
