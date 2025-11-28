@@ -24,7 +24,7 @@ def numpy_to_pil(numpy_array):
 def main():
     st.set_page_config(
         page_title="Print Defect Detection",
-        page_icon="👕",
+        page_icon="icon.ico",
         layout="wide"
     )
     
